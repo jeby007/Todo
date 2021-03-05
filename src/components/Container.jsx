@@ -15,10 +15,10 @@ export default class Container extends Component {
             breakpoint="lg"
             collapsedWidth="0"
             onBreakpoint={broken => {
-              console.log(broken);
+              //console.log(broken);
             }}
             onCollapse={(collapsed, type) => {
-              console.log(collapsed, type);
+              //console.log(collapsed, type);
             }}
           >
             <div className={'title'}><Icons icon={"react"} size={"25px"} class={'logo'}/>后台管理系统</div>

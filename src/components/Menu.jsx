@@ -1,10 +1,14 @@
 import React, {Component} from 'react'
-import {Link} from "react-router-dom";
+import {Link,withRouter} from "react-router-dom";
 import {Menu} from "antd";
 import Icons from "./Icons";
 import {menus} from "@/static/js/Enums.js"
 const {SubMenu,Item} = Menu
 class MenuNav extends Component {
+  constructor(props) {
+    super(props);
+    this.props.history.replace('/category')
+  }
   getMunusNode = (arr)=>{
     return arr.reduce((p,c)=>{
       if (c.children){
@@ -15,10 +19,11 @@ class MenuNav extends Component {
       return p
     },[])
   }
+
   render() {
     return (
       <Menu theme="dark" mode="inline" defaultSelectedKeys={"home"}>{this.getMunusNode(menus)}</Menu>
     )
   }
 }
-export default MenuNav
+export default withRouter(MenuNav)

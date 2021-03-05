@@ -69,3 +69,66 @@ export const menus = [
     ]
   },
 ]
+export const category = {
+  data:[
+    {
+      name:'户外装备',
+      rank:'一级分类',
+      fit_type:['装备','羽绒服'],
+      operate:['del'],
+      c_name:'太刀',
+      c_date:'2020-03-04',
+      key:'no1'
+    },
+    {
+      name:'数码',
+      rank:'一级分类',
+      fit_type:['电脑','手机'],
+      operate:['del','change'],
+      c_name:'太刀',
+      c_date:'2020-03-04',
+      key:'no2'
+    },
+    {
+      name:'食品',
+      rank:'一级分类',
+      fit_type:['回锅肉','土豆片'],
+      operate:['change'],
+      c_name:'太刀',
+      c_date:'2020-03-04',
+      key:'no3'
+    }
+  ],
+  columns:[
+    {
+      title:'分类名称',
+      dataIndex:'name',
+      align:'center'
+    },
+    {
+      title:'分类级别',
+      dataIndex:'rank',
+      align:'center'
+    },
+    {
+      title:'适用产品类型',
+      dataIndex:'fit_type',
+      align:'center'
+    },
+    {
+      title:'创建人',
+      dataIndex:'c_name',
+      align:'center'
+    },
+    {
+      title:'创建日期',
+      dataIndex:'c_date',
+      align:'center'
+    },
+    {
+      title:'操作',
+      dataIndex:'operate',
+      align:'center'
+    },
+  ]
+}
