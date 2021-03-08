@@ -111,7 +111,7 @@ export const category = {
       align:'center'
     },
     {
-      title:'适用产品类型',
+      title:'适用商品类型',
       dataIndex:'fit_type',
       align:'center'
     },
