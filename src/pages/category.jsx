@@ -14,10 +14,15 @@ export default class Category extends Component {
     this.setState({data:this.state.data.filter(vo => vo.key !== row.key)})
   }
   change(type,row){
+    this.CategoryModal.getEditForm(type,row)
     this.CategoryModal.setVisible(true)
   }
-  changeData(){
-    console.log('触发了');
+  changeData(values){
+    const {data} = this.state
+    const val = values
+    val.operate = ['edit','change']
+    val.key = `no${data.length + 1}`
+    this.setState({data:data.concat([val])})
   }
   getCol() {
     const newCol = this.state.columns
@@ -62,7 +67,7 @@ export default class Category extends Component {
         </div>
         <Divider />
         <Table columns={columns} dataSource={data}/>
-        <CategoryModal onRef={v => this.CategoryModal = v} changeData={this.changeData}/>
+        <CategoryModal onRef={v => this.CategoryModal = v} changeData={this.changeData.bind(this)}/>
       </div>
     )
   }
