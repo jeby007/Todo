@@ -132,3 +132,74 @@ export const category = {
     },
   ]
 }
+export const products = {
+  data:[
+    {
+      name:'羽绒服',
+      parent:'一级分类',
+      price:699,
+      num:100,
+      u_date:'2020-03-04',
+      operate:['edit','change'],
+      status:'0',
+      key:'0'
+    },
+    {
+      name:'电脑',
+      parent:'一级分类',
+      price:4699,
+      num:10,
+      u_date:'2020-03-04',
+      operate:['edit','change'],
+      status:'1',
+      key:'1'
+    },
+    {
+      name:'手机',
+      parent:'三级分类',
+      price:3699,
+      num:11,
+      u_date:'2020-03-04',
+      operate:['edit','change'],
+      status:'0',
+      key:'2'
+    },
+  ],
+  columns:[
+    {
+      title:'商品名称',
+      dataIndex:'name',
+      align:'center'
+    },
+    {
+      title:'所属分类',
+      dataIndex:'parent',
+      align:'center'
+    },
+    {
+      title:'商品价格',
+      dataIndex:'price',
+      align:'center'
+    },
+    {
+      title:'库存',
+      dataIndex:'num',
+      align:'center'
+    },
+    {
+      title:'更新日期',
+      dataIndex:'u_date',
+      align:'center'
+    },
+    {
+      title: '上下架',
+      dataIndex: 'status',
+      align: 'center'
+    },
+    {
+      title:'操作',
+      dataIndex:'operate',
+      align:'center'
+    },
+  ]
+}
