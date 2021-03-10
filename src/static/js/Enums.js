@@ -50,19 +50,19 @@ export const menus = [
     children: [
       {
         title: '柱状图',
-        key: '/charts/bar',
+        key: '/bar',
         icon: 'bar',
         comp:'Bar'
       },
       {
         title: '折线图',
-        key: '/charts/line',
+        key: '/line',
         icon: 'line',
         comp: 'Line'
       },
       {
         title: '饼图',
-        key: '/charts/pie',
+        key: '/pie',
         icon: 'pie',
         comp: 'Pie'
       },
