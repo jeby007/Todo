@@ -20,9 +20,19 @@ export default class Category extends Component {
   changeData(values){
     const {data} = this.state
     const val = values
-    val.operate = ['edit','change']
-    val.key = `no${data.length + 1}`
-    this.setState({data:data.concat([val])})
+    if (data.find(vo=>vo.key === val.key)){
+      const edit = data.map(vo=>{
+        if (vo.key === val.key){
+          Object.assign(vo,values)
+        }
+        return vo
+      })
+      this.setState({data:edit})
+    }else {
+      val.operate = ['edit','change']
+      val.key = `no${data.length + 1}`
+      this.setState({data:data.concat([val])})
+    }
   }
   getCol() {
     const newCol = this.state.columns

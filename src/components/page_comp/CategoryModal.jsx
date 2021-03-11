@@ -15,22 +15,20 @@ export default class CategoryModal extends Component {
     super(props);
     if (props.onRef) props.onRef(this)
   }
-  state = {visible:false,initForm:{c_date:moment().format('YYYY-MM-DD')}}
+  state = {visible:false,initForm:{}}
   setVisible(Bool){
     this.setState({visible:Bool})
   }
   submit(values){
-    this.props.changeData(values)
+    const params = this.state.initForm.key ? {...values,key:this.state.initForm.key} : values
+    this.props.changeData(params)
     this.setState({visible:false})
   }
   finishFailed(values, errorFields, outOfDate){
     console.log(values, errorFields, outOfDate);
   }
   getEditForm(type,val){
-    if (type === 'edit'){
-      this.setState({initForm:val})
-    }
-    this.setState({initForm:val})
+    this.setState({initForm:type === 'edit' ? val : {c_date:moment().format('YYYY-MM-DD')}})
   }
   render() {
     const {visible,initForm} = this.state
@@ -73,7 +71,7 @@ export default class CategoryModal extends Component {
           <Item label={"创建人"} name={"c_name"} rules={[{required: true, message: '创建人不能为空'}]}>
             <Input  allowClear={true}/>
           </Item>
-          <Item label={"创建日期"} name={"c_date"} rules={[{required: true, message: '创建人不能为空'}]}>
+          <Item label={"创建日期"} name={"c_date"} rules={[{required: true, message: '创建日期不能为空'}]}>
             <Input disabled={true} allowClear={true}/>
           </Item>
           <Item wrapperCol={{span: 24}}>
